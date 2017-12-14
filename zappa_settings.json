@@ -1,0 +1,11 @@
+{
+    "dev": {
+        "app_function": "api.app", 
+        "aws_region": "us-west-1", 
+        "profile_name": null, 
+        "iam_authorization": false,
+        "project_name": "agency-performa", 
+        "runtime": "python2.7", 
+        "s3_bucket": "zappa-hruncx1gi"
+    }
+}
