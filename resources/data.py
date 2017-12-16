@@ -1,19 +1,22 @@
 from flask_restful import Resource
-from models.data import dataframes, DATASETS
+from models.data import Dataset
 from . import auth
+from utils import read_config
 
 
-class Dataset(Resource):
+pivots = read_config('pivots.json')
+
+
+class DatasetResource(Resource):
     @auth.login_required
     def get(self, dataset):
-        if dataset not in DATASETS:
+        d = Dataset.query.filter_by(key=dataset)
+        if not d:
             return {'status': 'error', 'message': 'Dataset doesn\'t exists'}, 400
-        df = dataframes[dataset]
-        types = {}
-        dtypes = df.columns.to_series().groupby(df.dtypes).groups
-        for k in dtypes:
-            names = []
-            for t in dtypes[k]:
-                names.append(str(t))
-            types[str(k)] = names
-        return {'types': types}
+        return d[0].to_dict()
+
+
+class Spec(Resource):
+    @auth.login_required
+    def get(self):
+        return pivots

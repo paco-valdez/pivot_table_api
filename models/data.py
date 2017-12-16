@@ -1,18 +1,24 @@
-import pandas as pd
-import boto3
-import io
+from sqlalchemy.dialects.postgresql import JSONB
+from . import db
 
 
-DATASETS = ['finalapi']
-dataframes = {}
+class Dataset(db.Model):
+    __tablename__ = 'datasets'
+    key = db.Column(db.VARCHAR, primary_key=True)
+    column = db.Column(db.VARCHAR)
+    row = db.Column(db.VARCHAR)
+    value = db.Column(db.VARCHAR)
+    func = db.Column(db.VARCHAR)
+    data = db.Column('metadata_poi', JSONB)
 
+    def __repr__(self):
+        return '<Dataset %r>' % (self.key,)
 
-client = boto3.client(
-    's3',
-    aws_access_key_id='AKIAIB3LSJRSL5PBMZPQ',
-    aws_secret_access_key='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',
-)
-for key in DATASETS:
-    obj = client.get_object(Bucket='datasets-hruncx1gi', Key='%s.csv' % (key,))
-    dataframes[key] = pd.read_csv(io.BytesIO(obj['Body'].read()))
-
+    def to_dict(self):
+        return {
+            'column': self.column,
+            'row': self.row,
+            'value': self.value,
+            'func': self.func,
+            'data': self.data
+        }

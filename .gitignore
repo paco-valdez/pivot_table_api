@@ -101,5 +101,8 @@ ENV/
 .mypy_cache/
 
 .idea
-*.csv
 *.json
+!pivots.json
+
+.DS_Store
+

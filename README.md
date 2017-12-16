@@ -1,6 +1,18 @@
 # agency_performance_model
 agency_performance_model
 
+### Set-up
+
+    virtualenv env
+    source env/bin/activate
+    pip install requirements.txt
+    python setup.py
+    python api.py
+     * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+     * Restarting with stat
+     * Debugger is active!
+     * Debugger PIN: 000-000-000
+
 
 ### Create Users:
 
@@ -30,3 +42,9 @@ First upload data with script or via AWS GUI.
 Then in models/data.py add the dataset name to DATASETS:
 
     DATASETS = ['finalapi', 'new_dataset']  # Add your dataset here.
+
+
+### Deployment
+
+
+    zappa deploy dev

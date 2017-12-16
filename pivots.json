@@ -1,0 +1,9 @@
+{
+  "columns":["STAT_PROFILE_DATE_YEAR", "STAT_PROFILE_DATE_MONTH", "STATE_ABBR"],
+  "rows":["PROD_LINE", "AGENCY_ID", "PROD_ABBR", "STATE_ABBR"],
+  "values": {
+    "sum":["RETENTION_POLY_QTY", "WRTN_PREM_AMT", "LOSS_RATIO"],
+    "mean":["RETENTION_POLY_QTY", "WRTN_PREM_AMT", "LOSS_RATIO"]
+  },
+  "reports": ["AGENCY_ID", "PROD_LINE"]
+}
