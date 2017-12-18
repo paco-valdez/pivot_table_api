@@ -7,7 +7,7 @@ The pivot tables are defined in the "pivots.json", the sample file is meant to b
 The Data pipeline consists in calculate all the pivot tables defined in the "pivots.json" file, and then upload all the calculated data to the relational data base and then uploads a CSV file for each pivot table to S3. Then the REST api only serves a pre-calculated version of each table.  
 
 
-[Demo Site](https://s3-us-west-1.amazonaws.com/static-hruncx1gi/index.html)
+[Demo Site](http://static-hruncx1gi.s3-website-us-west-1.amazonaws.com)
 
 [Demo API endpoint](https://re291hwt17.execute-api.us-west-1.amazonaws.com/dev/)
 
