@@ -9,6 +9,8 @@ The Data pipeline consists in calculate all the pivot tables defined in the "piv
 
 [Demo Site](http://static-hruncx1gi.s3-website-us-west-1.amazonaws.com)
 
+![Demo Site](static/screen.png)
+
 [Demo API endpoint](https://re291hwt17.execute-api.us-west-1.amazonaws.com/dev/)
 
 ### Set-up
