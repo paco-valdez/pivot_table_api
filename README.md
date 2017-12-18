@@ -34,8 +34,7 @@ Define pivots in pivots.json:
       "values": {
         "sum":["RETENTION_POLY_QTY", "WRTN_PREM_AMT", "LOSS_RATIO"],
         "mean":["RETENTION_POLY_QTY", "WRTN_PREM_AMT", "LOSS_RATIO"]
-      },
-      "reports": ["AGENCY_ID", "PROD_LINE"]
+      }
     }
 
 Upload data with script
