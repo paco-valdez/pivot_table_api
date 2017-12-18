@@ -13,7 +13,10 @@ class DatasetResource(Resource):
         d = Dataset.query.filter_by(key=dataset)
         if not d:
             return {'status': 'error', 'message': 'Dataset doesn\'t exists'}, 400
-        return d[0].to_dict()
+        try:
+            return d[0].to_dict()
+        except IndexError as ex:
+            return {'status': 'error', 'message': 'Dataset doesn\'t exists'}, 400
 
 
 class Spec(Resource):

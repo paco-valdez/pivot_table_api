@@ -42,26 +42,32 @@
         <div class="row">
           <div class="col-lg-8 mx-auto">
             <h2>Charts</h2>
+              Series:
               <select id="rows">
                   <option value="PROD_LINE">Product Line</option>
                   <option value="AGENCY_ID">Agency ID</option>
                   <option value="PROD_ABBR">Product</option>
                   <option value="STATE_ABBR">State</option>
               </select>
+              Dimension:
               <select id="columns">
                   <option value="STAT_PROFILE_DATE_YEAR">Year</option>
                   <option value="STAT_PROFILE_DATE_MONTH">Month</option>
                   <option value="STATE_ABBR">State</option>
               </select>
+              Value:
               <select id="values">
                   <option value="RETENTION_POLY_QTY">Retention</option>
                   <option value="WRTN_PREM_AMT">Amount</option>
                   <option value="LOSS_RATIO">Loss Ratio</option>
               </select>
+              Function:
               <select id="func">
                   <option value="sum">Sum</option>
                   <option value="mean">Mean</option>
               </select>
+              <br/>
+              <a id="download" href="https://s3-us-west-1.amazonaws.com/datasets-hruncx1gi/sum-RETENTION_POLY_QTY-PROD_LINE-STAT_PROFILE_DATE_YEAR.csv" target="_blank">Dowload CSV</a>
             <div id="chart"></div>
           </div>
         </div>

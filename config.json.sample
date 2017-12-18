@@ -1,3 +1,4 @@
 {
-  "SQLALCHEMY_DATABASE_URI": "postgresql://user:pass@hostname/database"
+  "SQLALCHEMY_DATABASE_URI": "postgresql://user:pass@hostname/database",
+  "S3_BUCKET_DATASETS": "bucket-name"
 }

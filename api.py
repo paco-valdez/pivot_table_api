@@ -20,5 +20,14 @@ api.add_resource(UserResource, '/user/<int:user_id>')
 api.add_resource(Token, '/token')
 api.add_resource(Spec, '/spec')
 
+
+@app.after_request
+def after_request(response):
+    response.headers.add('Access-Control-Allow-Origin', '*')
+    response.headers.add('Access-Control-Allow-Headers',
+                         'Content-Type,Authorization,X-Requested-With,Access-Control-Request-Headers')
+    response.headers.add('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS')
+    return response
+
 if __name__ == '__main__':
     app.run(debug=True)
