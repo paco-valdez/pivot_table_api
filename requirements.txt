@@ -24,7 +24,7 @@ jmespath==0.9.3
 kappa==0.6.0
 lambda-packages==0.19.0
 MarkupSafe==1.0
-numpy==1.13.3
+numpy==1.22.0
 pandas==0.21.1
 passlib==1.7.1
 placebo==0.8.1
